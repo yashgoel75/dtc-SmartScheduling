@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_dc06b027071436db5756405650de0b58 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_dc06b027071436db5756405650de0b58" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_dc06b027071436db5756405650de0b58 = L.map(
+                "map_dc06b027071436db5756405650de0b58",
+                {
+                    center: [28.61474, 77.20727],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_01372ee8c7c49f653eb77fbe321f7d3b = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_01372ee8c7c49f653eb77fbe321f7d3b.addTo(map_dc06b027071436db5756405650de0b58);
+        
+    
+            var marker_2608e765f2691ebc5d5142e5c833c6e7 = L.marker(
+                [28.587, 77.2591],
+                {}
+            ).addTo(map_dc06b027071436db5756405650de0b58);
+        
+    
+            var icon_ff781d030796b9b797a4a668dbc89232 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2608e765f2691ebc5d5142e5c833c6e7.setIcon(icon_ff781d030796b9b797a4a668dbc89232);
+        
+    
+        var popup_fefe78b6000a7fc596625c387fa629eb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8d007d84f3ee2a805f13fec7d06870b4 = $(`<div id="html_8d007d84f3ee2a805f13fec7d06870b4" style="width: 100.0%; height: 100.0%;">Sarai Kale Khan ISBT</div>`)[0];
+                popup_fefe78b6000a7fc596625c387fa629eb.setContent(html_8d007d84f3ee2a805f13fec7d06870b4);
+            
+        
+
+        marker_2608e765f2691ebc5d5142e5c833c6e7.bindPopup(popup_fefe78b6000a7fc596625c387fa629eb)
+        ;
+
+        
+    
+    
+            var marker_92bf86e43ae22dc7be82cab9e810c453 = L.marker(
+                [28.616118, 77.25037],
+                {}
+            ).addTo(map_dc06b027071436db5756405650de0b58);
+        
+    
+            var icon_848b53cfe04369bf74ef0ee1989c7267 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_92bf86e43ae22dc7be82cab9e810c453.setIcon(icon_848b53cfe04369bf74ef0ee1989c7267);
+        
+    
+        var popup_a7da8bcc2700d6333f6bf55ea629eea1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_501f44f6be037f361c1f5a2fd2ac89c0 = $(`<div id="html_501f44f6be037f361c1f5a2fd2ac89c0" style="width: 100.0%; height: 100.0%;">Railway Bridge Road</div>`)[0];
+                popup_a7da8bcc2700d6333f6bf55ea629eea1.setContent(html_501f44f6be037f361c1f5a2fd2ac89c0);
+            
+        
+
+        marker_92bf86e43ae22dc7be82cab9e810c453.bindPopup(popup_a7da8bcc2700d6333f6bf55ea629eea1)
+        ;
+
+        
+    
+    
+            var marker_4fd5599c521519be0d16ed68b6af426f = L.marker(
+                [28.63243, 77.21878],
+                {}
+            ).addTo(map_dc06b027071436db5756405650de0b58);
+        
+    
+            var icon_098867f0e59ac4dc082c4065236ae4ce = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4fd5599c521519be0d16ed68b6af426f.setIcon(icon_098867f0e59ac4dc082c4065236ae4ce);
+        
+    
+        var popup_f9950e4733c2a42f4e9cde7d12f04827 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_048c27b965c2ca28b272e6b797207955 = $(`<div id="html_048c27b965c2ca28b272e6b797207955" style="width: 100.0%; height: 100.0%;">I.T.O(AGCR)</div>`)[0];
+                popup_f9950e4733c2a42f4e9cde7d12f04827.setContent(html_048c27b965c2ca28b272e6b797207955);
+            
+        
+
+        marker_4fd5599c521519be0d16ed68b6af426f.bindPopup(popup_f9950e4733c2a42f4e9cde7d12f04827)
+        ;
+
+        
+    
+    
+            var marker_4e4eee60869ac3b9522654f3df637831 = L.marker(
+                [28.65035, 77.23869],
+                {}
+            ).addTo(map_dc06b027071436db5756405650de0b58);
+        
+    
+            var icon_89c89aec883ba8146a969ddb5fc376d2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4e4eee60869ac3b9522654f3df637831.setIcon(icon_89c89aec883ba8146a969ddb5fc376d2);
+        
+    
+        var popup_1624e4fc9154989f74691f06cc04d973 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a65b8d6ca751db7d449f7c4e4a044de7 = $(`<div id="html_a65b8d6ca751db7d449f7c4e4a044de7" style="width: 100.0%; height: 100.0%;">Delhi Gate</div>`)[0];
+                popup_1624e4fc9154989f74691f06cc04d973.setContent(html_a65b8d6ca751db7d449f7c4e4a044de7);
+            
+        
+
+        marker_4e4eee60869ac3b9522654f3df637831.bindPopup(popup_1624e4fc9154989f74691f06cc04d973)
+        ;
+
+        
+    
+    
+            var marker_2a04624184ccce3c8e70d0ead4d72ea5 = L.marker(
+                [28.656473, 77.242943],
+                {}
+            ).addTo(map_dc06b027071436db5756405650de0b58);
+        
+    
+            var icon_49bb685ff14c3040dfbcc549d565edf0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_2a04624184ccce3c8e70d0ead4d72ea5.setIcon(icon_49bb685ff14c3040dfbcc549d565edf0);
+        
+    
+        var popup_68dc629c2c989a73a81b79709993f9e1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_95eb8677e637b7a4cacbeaf96f18c664 = $(`<div id="html_95eb8677e637b7a4cacbeaf96f18c664" style="width: 100.0%; height: 100.0%;">Red Fort</div>`)[0];
+                popup_68dc629c2c989a73a81b79709993f9e1.setContent(html_95eb8677e637b7a4cacbeaf96f18c664);
+            
+        
+
+        marker_2a04624184ccce3c8e70d0ead4d72ea5.bindPopup(popup_68dc629c2c989a73a81b79709993f9e1)
+        ;
+
+        
+    
+    
+            var marker_c6e3726e284d2d91afa52cca73512208 = L.marker(
+                [28.6688, 77.2309],
+                {}
+            ).addTo(map_dc06b027071436db5756405650de0b58);
+        
+    
+            var icon_6561cac31902ef8d35f5600a50bb797b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c6e3726e284d2d91afa52cca73512208.setIcon(icon_6561cac31902ef8d35f5600a50bb797b);
+        
+    
+        var popup_cdacbcfdb6fd018e504a4e0227cfc0c5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_14ce750aa951791056bdb16366b31537 = $(`<div id="html_14ce750aa951791056bdb16366b31537" style="width: 100.0%; height: 100.0%;">ISBT Kashmiri Gate</div>`)[0];
+                popup_cdacbcfdb6fd018e504a4e0227cfc0c5.setContent(html_14ce750aa951791056bdb16366b31537);
+            
+        
+
+        marker_c6e3726e284d2d91afa52cca73512208.bindPopup(popup_cdacbcfdb6fd018e504a4e0227cfc0c5)
+        ;
+
+        
+    
+    
+            var marker_c5556094d2fb98197a617ff1f084742b = L.marker(
+                [28.70346, 77.21953],
+                {}
+            ).addTo(map_dc06b027071436db5756405650de0b58);
+        
+    
+            var icon_f1bb14938c0dff397e29ab4c9744d41c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c5556094d2fb98197a617ff1f084742b.setIcon(icon_f1bb14938c0dff397e29ab4c9744d41c);
+        
+    
+        var popup_39df25438a44d8cbb98473a43f6bceb9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_def22bea5db43084b568a87fa027a83c = $(`<div id="html_def22bea5db43084b568a87fa027a83c" style="width: 100.0%; height: 100.0%;">Old Secretariat</div>`)[0];
+                popup_39df25438a44d8cbb98473a43f6bceb9.setContent(html_def22bea5db43084b568a87fa027a83c);
+            
+        
+
+        marker_c5556094d2fb98197a617ff1f084742b.bindPopup(popup_39df25438a44d8cbb98473a43f6bceb9)
+        ;
+
+        
+    
+    
+            var marker_798b1b6ece90be96710ddb65cf9c0cbc = L.marker(
+                [28.70519, 77.2232],
+                {}
+            ).addTo(map_dc06b027071436db5756405650de0b58);
+        
+    
+            var icon_1d592b3d833d38432538704b5d951209 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_798b1b6ece90be96710ddb65cf9c0cbc.setIcon(icon_1d592b3d833d38432538704b5d951209);
+        
+    
+        var popup_d55fbbaa37a0d1015044cccf8b3e9973 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_213d5368d7805589378481e78d19452f = $(`<div id="html_213d5368d7805589378481e78d19452f" style="width: 100.0%; height: 100.0%;">Balak Ram Hospital</div>`)[0];
+                popup_d55fbbaa37a0d1015044cccf8b3e9973.setContent(html_213d5368d7805589378481e78d19452f);
+            
+        
+
+        marker_798b1b6ece90be96710ddb65cf9c0cbc.bindPopup(popup_d55fbbaa37a0d1015044cccf8b3e9973)
+        ;
+
+        
+    
+</script>
+</html>
