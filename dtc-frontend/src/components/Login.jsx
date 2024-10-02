@@ -1,126 +1,81 @@
 import React, { useState } from 'react';
-import { TextField, Button, Box, Typography, Container } from '@mui/material';
-import axios from 'axios';
+import { Container, TextField, Button, Typography, Box } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [otpFieldVisible, setOtpFieldVisible] = useState(false);
-  const [otp, setOtp] = useState('');
-  const [error, setError] = useState('');
+const Login = ({ setIsLoggedIn }) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-  const handlePhoneNumberChange = (event) => {
-    // Restrict input to numbers only
-    const value = event.target.value;
-    if (/^\d*$/.test(value)) {
-      setPhoneNumber(value);
+  // Hardcoded credentials
+  const correctUsername = 'admin';
+  const correctPassword = '1234';
+
+  // Handle login
+  const handleLogin = () => {
+    if (username === correctUsername && password === correctPassword) {
+      setIsLoggedIn(true); // Set login state to true
+      localStorage.setItem('isLoggedIn', 'true'); // Sync with local storage
+      navigate('/office'); // Navigate to Office page
+    } else {
+      alert('Invalid username or password.');
     }
   };
 
-  const handleLogin = async (event) => {
-    event.preventDefault();
-    
-    if (!phoneNumber) {
-      setError('Please enter a valid phone number.');
-      return;
-    }
-
-    try {
-
-      await axios.post('/api/send-otp', { mobile: phoneNumber });
-      setOtpFieldVisible(true);
-      setError(''); 
-    } catch (err) {
-      setError('Failed to send OTP. Please try again.');
-    }
-  };
-
-  const handleOtpChange = (event) => {
-    setOtp(event.target.value);
-  };
-
-  const handleVerifyOtp = (event) => {
-    event.preventDefault();
-    console.log('OTP entered:', otp);
-  };
+  // Check if both fields are filled
+  const isLoginDisabled = username.trim() === '' || password.trim() === '';
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container
+      maxWidth="sm"
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '75vh',
+      }}
+    >
       <Box
         sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          mt: 8,
-          p: 3,
-          borderRadius: 2,
-          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-          bgcolor: 'background.paper'
+          width: '100%',
+          maxWidth: 400,
+          padding: 4,
+          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+          borderRadius: '8px',
+          backgroundColor: '#fff',
+          textAlign: 'center',
         }}
       >
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h4" sx={{ mb: 2, fontWeight: 'bold' }}>
           Login
         </Typography>
-
-        <Box component="form" sx={{ mt: 1 }} onSubmit={handleLogin}>
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="phoneNumber"
-            label="Phone Number"
-            name="phoneNumber"
-            value={phoneNumber}
-            onChange={handlePhoneNumberChange}
-            inputProps={{ pattern: "[0-9]*" }} // Ensure only numbers
-            autoComplete="off"
-            autoFocus
-          />
-          
-          {otpFieldVisible && (
-            <TextField
-              variant="outlined"
-              margin="normal"
-              required
-              fullWidth
-              id="otp"
-              label="Enter OTP"
-              name="otp"
-              value={otp}
-              onChange={handleOtpChange}
-              autoComplete="off"
-            />
-          )}
-
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            sx={{ mt: 3, mb: 2 }}
-          >
-            {otpFieldVisible ? 'Verify OTP' : 'Login'}
-          </Button>
-          
-          {otpFieldVisible && (
-            <Button
-              type="button"
-              fullWidth
-              variant="contained"
-              color="secondary"
-              sx={{ mt: 2 }}
-              onClick={handleVerifyOtp}
-            >
-              Verify OTP
-            </Button>
-          )}
-
-          {error && (
-            <Typography color="error" sx={{ mt: 2 }}>
-              {error}
-            </Typography>
-          )}
-        </Box>
+        <TextField
+          fullWidth
+          label="Username"
+          variant="outlined"
+          margin="normal"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <TextField
+          fullWidth
+          label="Password"
+          type="password"
+          variant="outlined"
+          margin="normal"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <Button
+          variant="contained"
+          color="primary"
+          fullWidth
+          sx={{ mt: 2, py: 1.5, fontSize: '16px', textTransform: 'none' }}
+          onClick={handleLogin}
+          disabled={isLoginDisabled} // Disable button if fields are empty
+        >
+          Login
+        </Button>
       </Box>
     </Container>
   );

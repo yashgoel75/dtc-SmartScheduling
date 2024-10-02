@@ -5,16 +5,16 @@ import {
   Typography,
   Box,
   IconButton,
-  Link,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import { Link as RouterLink } from "react-router-dom";
 
-const TopBar = () => {
+const TopBar = ({ isLoggedIn }) => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm")); 
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <AppBar
@@ -68,22 +68,26 @@ const TopBar = () => {
             fontWeight: isMobile ? "800" : "400",
           }}
         >
-          <Link
-            href="#"
-            underline="hover"
-            color="inherit"
-            sx={{ marginRight: isMobile ? "8px" : "16px", fontSize: "1rem" }}
+          <RouterLink
+            to="/" 
+            style={{ textDecoration: "none", color: "inherit" }}
           >
-            For Passengers
-          </Link>
-          <Link
-            href="#"
-            underline="hover"
-            color="inherit"
-            sx={{ fontSize: "1rem" }}
+            <Typography variant="body2" sx={{ marginRight: isMobile ? "8px" : "16px", fontSize: "1rem" }}>
+              For Passengers
+            </Typography>
+          </RouterLink>
+          <RouterLink
+            to={isLoggedIn ? "/office" : "/login"} // Update this based on login status
+            style={{
+              textDecoration: "none",
+              color: isLoggedIn ? "#000" : "#aaa", // Change color based on login status
+              pointerEvents: isLoggedIn ? "auto" : "none", // Disable link if not logged in
+            }}
           >
-            For Corporates
-          </Link>
+            <Typography variant="body2" sx={{ fontSize: "1rem" }}>
+              For Corporates
+            </Typography>
+          </RouterLink>
         </Box>
       </Toolbar>
     </AppBar>
